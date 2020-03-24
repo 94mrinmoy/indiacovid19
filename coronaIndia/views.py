@@ -34,6 +34,7 @@ def index2(request):
     df,total,cTotal,icount,dcount,allTotal = s3.main()
     #print(df[1][1])
     #dfhtml = HTML(df.to_html(index=False))
+    df = df.sort_values(by=['Corona Affected Count'],ascending=False)
     dfStates = list((df['States']))
     dfAffected = list(df['Corona Affected Count'])
     dfCured = list(df['Cured Count'])
