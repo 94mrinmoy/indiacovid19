@@ -8,8 +8,10 @@ def getImage(dictAffectedData,dictCuredData,total,cTotal,dcount,allTotal):
     #img = Image.open(r"coronaIndia\static\images\india5.png")#('RGB', (100, 30), color = (0, 26, 102))
     img = Image.open(settings.STATIC_ROOT + "/images/india5.png")
     d = ImageDraw.Draw(img)
-    fnt = ImageFont.truetype('arial.ttf', 15)
-    fnt1 = ImageFont.truetype('arial.ttf', 18)
+    fnt = ImageFont.load_default()
+    fnt1 = ImageFont.load_default()
+    #fnt = ImageFont.truetype('arial.ttf', 15)
+    #fnt1 = ImageFont.truetype('arial.ttf', 18)
     print('here')
     #Ladakh
     d.text((300,72), str(dictAffectedData['Ladakh']),font=fnt, fill=(0, 26, 102))
