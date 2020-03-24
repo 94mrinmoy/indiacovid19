@@ -3,6 +3,7 @@ from PIL import Image, ImageDraw,ImageFont
 def getImage(dictAffectedData,dictCuredData,total,cTotal,dcount,allTotal):
  
     # img = Image.open("Corona\coronaIndia\static\images\india3.png")#('RGB', (100, 30), color = (0, 26, 102))
+    #print(static)
     img = Image.open("coronaIndia\static\images\india5.png")#('RGB', (100, 30), color = (0, 26, 102))
     
     d = ImageDraw.Draw(img)
