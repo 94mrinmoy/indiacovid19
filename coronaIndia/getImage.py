@@ -138,5 +138,5 @@ def getImage(dictAffectedData,dictCuredData,total,cTotal,dcount,allTotal):
     #img.save(r'coronaIndia\static\images\india4.png')
     #print(settings.PROJECT_ROOT + '/coronaIndia/static/images/india4.png')
     img.save(settings.PROJECT_ROOT + '/coronaIndia/static/images/india4.png')
-    #print('here3')
+    print(settings.PROJECT_ROOT + '/coronaIndia/static/images/india4.png')
     #img.save('coronaIndia\static\images\india.jp2', 'JPEG2000', quality_mode='dB', quality_layers=[41])
