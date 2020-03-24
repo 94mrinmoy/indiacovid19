@@ -18,13 +18,22 @@ def coronaData () :
     print(page.status_code)
     soup= BeautifulSoup(page.content,'html.parser')
     a= list(soup.children)
+    startPoint = 0
     for i,e in enumerate(soup.find_all('tr')):#, class_= "table"):
-        
+        try:
+            if e.get_text().split('\n')[2] == 'Andhra Pradesh' :
+                startPoint = i
+                break
+        except:
+            pass     
+
+    for i,e in enumerate(soup.find_all('tr')):#, class_= "table"):
+        #print(startPoint)
         #print(e.get_text())
         #states.append(e.get_text().split('\n')[2])
         #print(e.get_text().split('\n')[4] + ':')
         #print(e.get_text().split('\n')[5])
-        if i>95 and i<len(soup.find_all('tr'))-1:
+        if i>=startPoint and i<len(soup.find_all('tr'))-1:
             print(e.get_text())
             states.append(e.get_text().split('\n')[2])
             if e.get_text().split('\n')[3] != '':
@@ -48,7 +57,7 @@ def coronaData () :
     dcount = soup.find_all('span', class_= "icount")[3].get_text()  
     allTotal = int(icount) + int(dcount)  
     print(allTotal)
-    return states,currentCount,curedCount,icount,dcount,deathCount,allTotal
+    return states,currentCount,curedCount,icount,dcount,deathCount,allTotal,startPoint
 
 
 def getPopulation():
@@ -86,14 +95,14 @@ population = ['199,812,341', '112,374,333', '104,099,452', '91,276,115', '72,626
 '1,097,206', '610,577', '16,787,941', '12,267,032', '1,247,953', '1,055,450', '585,764', '380,581', '274,000', '64,473']
 
 #print(len(coronaData()))
-states,currentCount,curedCount,icount,dcount,deathCount,allTotal = coronaData()
+states,currentCount,curedCount,icount,dcount,deathCount,allTotal,startPoint = coronaData()
 #print(len(states))
 #print(currentCount[1:-1])
 
 #states = states[1:-1]
-currentCount = currentCount[96:-1]
-curedCount = curedCount[96:-1]
-deathCount = deathCount[96:-1]
+currentCount = currentCount[startPoint:-1]
+curedCount = curedCount[startPoint:-1]
+deathCount = deathCount[startPoint:-1]
 #print(len(states))
 #print(len(currentCount))
 
