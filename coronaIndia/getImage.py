@@ -5,7 +5,7 @@ def getImage(dictAffectedData,dictCuredData,total,cTotal,dcount,allTotal):
  
     # img = Image.open("Corona\coronaIndia\static\images\india3.png")#('RGB', (100, 30), color = (0, 26, 102))
     #print(static)
-    #img = Image.open("coronaIndia\static\images\india5.png")#('RGB', (100, 30), color = (0, 26, 102))
+    #img = Image.open(r"coronaIndia\static\images\india5.png")#('RGB', (100, 30), color = (0, 26, 102))
     img = Image.open(settings.STATIC_ROOT + "/images/india5.png")
     d = ImageDraw.Draw(img)
     fnt = ImageFont.truetype('arial.ttf', 15)
@@ -133,8 +133,8 @@ def getImage(dictAffectedData,dictCuredData,total,cTotal,dcount,allTotal):
     d.text((600,117), "Total Cured Count               : " + str(cTotal),font=fnt1, fill=(0, 26, 102))
     d.text((600,134), "Total Death Count               : " + str(dcount),font=fnt1, fill=(0, 26, 102))
 
-    #img.save('coronaIndia\static\images\india4.png')
-    print(settings.PROJECT_ROOT + '/coronaIndia/static/images/india4.png')
+    #img.save(r'coronaIndia\static\images\india4.png')
+    #print(settings.PROJECT_ROOT + '/coronaIndia/static/images/india4.png')
     img.save(settings.PROJECT_ROOT + '/coronaIndia/static/images/india4.png')
-    print('here3')
+    #print('here3')
     #img.save('coronaIndia\static\images\india.jp2', 'JPEG2000', quality_mode='dB', quality_layers=[41])
