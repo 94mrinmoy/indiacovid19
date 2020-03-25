@@ -45,7 +45,7 @@ def coronaData () :
                 cuc = int(e.get_text().split('\n')[5])
             else:
                 cuc = int(e.get_text().split('\n')[6])
-            dc=int(e.get_text().split('\n')[6])
+            dc=int(e.get_text().split('\n')[6].replace('#',''))
         else:
             cc=0   
             cuc=0 
@@ -54,7 +54,7 @@ def coronaData () :
         curedCount.append(cuc)
         deathCount.append(dc)
     icount = soup.find_all('span', class_= "icount")[1].get_text()        
-    dcount = soup.find_all('span', class_= "icount")[3].get_text()  
+    dcount = soup.find_all('span', class_= "icount")[3].get_text().replace('#','')
     allTotal = int(icount) + int(dcount)  
     print(allTotal)
     return states,currentCount,curedCount,icount,dcount,deathCount,allTotal,startPoint
