@@ -118,16 +118,16 @@ def getImage(dictAffectedData,dictCuredData,total,cTotal,dcount,allTotal):
     d.text((145,786), str(dictCuredData['Goa']),font=fnt, fill=(0, 26, 102))
 
     #Tamil Nadu
-    d.text((245,854), str(dictAffectedData['Tamil Nadu']),font=fnt, fill=(0, 26, 102))
-    d.text((245,871), str(dictCuredData['Tamil Nadu']),font=fnt, fill=(0, 26, 102))
+    d.text((320,962), str(dictAffectedData['Tamil Nadu']),font=fnt, fill=(0, 26, 102))
+    d.text((320,979), str(dictCuredData['Tamil Nadu']),font=fnt, fill=(0, 26, 102))
 
     #Kerala
     d.text((220,932), str(dictAffectedData['Kerala']),font=fnt, fill=(0, 26, 102))
     d.text((220,949), str(dictCuredData['Kerala']),font=fnt, fill=(0, 26, 102))
 
     #Karnataka
-    d.text((320,962), str(dictAffectedData['Karnataka']),font=fnt, fill=(0, 26, 102))
-    d.text((320,979), str(dictCuredData['Karnataka']),font=fnt, fill=(0, 26, 102))
+    d.text((245,854), str(dictAffectedData['Karnataka']),font=fnt, fill=(0, 26, 102))
+    d.text((245,871), str(dictCuredData['Karnataka']),font=fnt, fill=(0, 26, 102))
 
     #Total
     d.text((600,83) , "Total Affected Count            : " + str(allTotal + cTotal ),font=fnt1, fill=(0, 26, 102))
