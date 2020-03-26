@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import coronaIndia.scrap3 as s3
 import coronaIndia.getImage as gi
+import coronaIndia.plotMe as pm
 # Create your views here.
 from django.http import HttpResponse
 import pandas as pd
@@ -67,6 +68,7 @@ def index2(request):
     if True:#(total>int(prvCount)):
         #print('here')
         gi.getImage(dictAffectedData,dictCuredData,icount,cTotal,dcount,allTotal)
+        pm.plotMe()
         prvCountFile = open('aTotal.txt','w+')
         prvCountFile.write(str(total))
         prvCountFile.close()

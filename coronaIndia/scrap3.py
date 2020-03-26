@@ -2,7 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.request import urlopen, Request
 import pandas as pd
+from datetime import date
 
+today = date.today()
 
 states=[] 
 allStates=[]
@@ -33,13 +35,14 @@ def coronaData () :
         #states.append(e.get_text().split('\n')[2])
         #print(e.get_text().split('\n')[4] + ':')
         #print(e.get_text().split('\n')[5])
-        if i>=startPoint and i<len(soup.find_all('tr'))-1:
-            print(e.get_text())
+        if i>=startPoint and i<len(soup.find_all('tr'))-2:
+            #print(e.get_text())
             states.append(e.get_text().split('\n')[2])
             if e.get_text().split('\n')[3] != '':
                 cc = int(e.get_text().split('\n')[3]) + int(e.get_text().split('\n')[4])
             else:
-                print(e.get_text().split('\n')[5])
+                print(e.get_text())
+                print(i)
                 cc = int(e.get_text().split('\n')[4]) + int(e.get_text().split('\n')[5])
             if e.get_text().split('\n')[5] !='':    
                 cuc = int(e.get_text().split('\n')[5])
@@ -56,7 +59,7 @@ def coronaData () :
     icount = soup.find_all('span', class_= "icount")[1].get_text()        
     dcount = soup.find_all('span', class_= "icount")[3].get_text().replace('#','')
     allTotal = int(icount) + int(dcount)  
-    print(allTotal)
+    print(allTotal,icount)
     return states,currentCount,curedCount,icount,dcount,deathCount,allTotal,startPoint
 
 
@@ -100,9 +103,9 @@ states,currentCount,curedCount,icount,dcount,deathCount,allTotal,startPoint = co
 #print(currentCount[1:-1])
 
 #states = states[1:-1]
-currentCount = currentCount[startPoint:-1]
-curedCount = curedCount[startPoint:-1]
-deathCount = deathCount[startPoint:-1]
+currentCount = currentCount[startPoint:-2]
+curedCount = curedCount[startPoint:-2]
+deathCount = deathCount[startPoint:-2]
 #print(len(states))
 #print(len(currentCount))
 
@@ -135,5 +138,5 @@ def main():
     #print(df2)
     df = df.append(df2,  ignore_index=True)    
 
-    df.to_csv('Corona3.csv', index=False, encoding='utf-8')
+    df.to_csv('Corona_' + str(today) + '.csv', index=False, encoding='utf-8')
     return df,total,cTotal,icount,dcount,allTotal
