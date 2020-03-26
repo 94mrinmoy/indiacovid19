@@ -131,7 +131,7 @@ def getImage(dictAffectedData,dictCuredData,total,cTotal,dcount,allTotal):
 
     #Total
     d.text((600,83) , "Total Affected Count            : " + str(allTotal + cTotal ),font=fnt1, fill=(0, 26, 102))
-    d.text((600,100), "Total Active Affected Count : " + str(total),font=fnt1, fill=(0, 26, 102))
+    d.text((600,100), "Total Active Affected Count     : " + str(total),font=fnt1, fill=(0, 26, 102))
     d.text((600,117), "Total Cured Count               : " + str(cTotal),font=fnt1, fill=(0, 26, 102))
     d.text((600,134), "Total Death Count               : " + str(dcount),font=fnt1, fill=(0, 26, 102))
 
