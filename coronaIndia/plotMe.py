@@ -27,7 +27,7 @@ def plotMe():
     ax.set_xticks(np.arange(len(x)))
     ax.set_xticklabels(x, rotation = 90)
     #plt.savefig(settings.PROJECT_ROOT + '\\coronaIndia\\static\\images\\graph.png')
-    plt.savefig(img.save(settings.PROJECT_ROOT + '/coronaIndia/static/images/graph.png')
+    plt.savefig(settings.PROJECT_ROOT + '/coronaIndia/static/images/graph.png')
     #plt.show()
     print('graph done')
 
