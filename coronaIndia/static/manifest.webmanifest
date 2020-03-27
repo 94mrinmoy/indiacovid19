@@ -2,7 +2,7 @@
     "name" : "India Covid19 Status",
     "short_name" : "covid19India",
     "start_url" : "/",
-    "display" : "fullscreen",
+    "display" : "standalone",
     "background_color" : "rgb(187, 213, 216)",
     "theme_color":"#75a3a3",
     "description" : "This is to track corona affected count in India.",

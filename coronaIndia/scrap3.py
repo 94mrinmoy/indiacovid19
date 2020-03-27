@@ -21,28 +21,29 @@ def coronaData () :
     soup= BeautifulSoup(page.content,'html.parser')
     a= list(soup.children)
     startPoint = 0
-    for i,e in enumerate(soup.find_all('tr')):#, class_= "table"):
+    for i,e in enumerate(soup.find_all('tr')):#, class_= "table-responsive")):
+        #print(e.get_text())
         try:
-            if e.get_text().split('\n')[2] == 'Andhra Pradesh' :
+            if e.get_text().split('\n')[2] == 'Andaman and Nicobar Islands' :
                 startPoint = i
                 break
         except:
             pass     
 
-    for i,e in enumerate(soup.find_all('tr')):#, class_= "table"):
+    for i,e in enumerate(soup.find_all('tr')):#, class_= "table-responsive")):
         #print(startPoint)
         #print(e.get_text())
         #states.append(e.get_text().split('\n')[2])
         #print(e.get_text().split('\n')[4] + ':')
         #print(e.get_text().split('\n')[5])
         if i>=startPoint and i<len(soup.find_all('tr'))-2:
-            #print(e.get_text())
+            print(e.get_text())
             states.append(e.get_text().split('\n')[2])
             if e.get_text().split('\n')[3] != '':
                 cc = int(e.get_text().split('\n')[3]) + int(e.get_text().split('\n')[4])
             else:
-                print(e.get_text())
-                print(i)
+                #print(e.get_text())
+                #print(i)
                 cc = int(e.get_text().split('\n')[4]) + int(e.get_text().split('\n')[5])
             if e.get_text().split('\n')[5] !='':    
                 cuc = int(e.get_text().split('\n')[5])

@@ -1,5 +1,6 @@
 States,Corona Affected Count,Cured Count,Total Population,Death Count
-Andhra Pradesh,11,1,49577103,0
+Andaman and Nicobar Islands,1,0,380581,0
+Andhra Pradesh,12,1,49577103,0
 Bihar,6,0,104099452,1
 Chandigarh,7,0,1055450,0
 Chhattisgarh,6,0,25545198,0
@@ -10,28 +11,27 @@ Haryana,30,11,25351462,0
 Himachal Pradesh,3,0,6864602,1
 Jammu and Kashmir,13,1,12267032,1
 Karnataka,55,3,61095297,2
-Kerala,118,6,33406061,0
-Ladakh,13,0,274000,0
+Kerala,137,11,33406061,0
+Ladakh,13,3,274000,0
 Madhya Pradesh,20,0,72626809,1
-Maharashtra,124,1,112374333,3
+Maharashtra,130,15,112374333,4
 Manipur,1,0,2570390,0
 Mizoram,1,0,1097206,0
 Odisha,2,0,41974218,0
 Puducherry,1,0,1247953,0
 Punjab,33,0,27743338,1
 Rajasthan,41,3,68548437,0
-Tamil Nadu,26,1,72147030,1
-Telengana,44,1,35003674,0
+Tamil Nadu,29,1,72147030,1
+Telengana,45,1,35003674,0
 Uttarakhand,5,0,10086292,0
 Uttar Pradesh,41,11,199812341,0
 West Bengal,10,0,91276115,1
-Sikkim,0,0,610577,0
 Dadra and Nagar Haveli and Daman and Diu,0,0,585764,0
 Nagaland,0,0,1978502,0
-Assam,0,0,31205576,0
 Tripura,0,0,3673917,0
-Lakshadweep,0,0,64473,0
-Andaman and Nicobar Islands,0,0,380581,0
+Assam,0,0,31205576,0
 Arunachal Pradesh,0,0,1383727,0
-Meghalaya,0,0,2966889,0
 Jharkhand,0,0,32988134,0
+Meghalaya,0,0,2966889,0
+Lakshadweep,0,0,64473,0
+Sikkim,0,0,610577,0
