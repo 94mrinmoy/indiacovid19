@@ -17,7 +17,7 @@ def coronaData () :
     
     url= "http://www.mohfw.gov.in/"
     page= requests.get(url)
-    print(page.status_code)
+    #print(page.status_code)
     soup= BeautifulSoup(page.content,'html.parser')
     a= list(soup.children)
     startPoint = 0
