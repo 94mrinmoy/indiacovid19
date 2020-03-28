@@ -68,7 +68,7 @@ def index2(request):
     if True:#(total>int(prvCount)):
         #print('here')
         gi.getImage(dictAffectedData,dictCuredData,icount,cTotal,dcount,allTotal)
-        pm.plotMe()
+        pm.plotMeLatest()
         prvCountFile = open('aTotal.txt','w+')
         prvCountFile.write(str(total))
         prvCountFile.close()

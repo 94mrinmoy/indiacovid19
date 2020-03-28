@@ -12,7 +12,7 @@ def getImage(dictAffectedData,dictCuredData,total,cTotal,dcount,allTotal):
     fnt1 = ImageFont.load_default()
     #fnt = ImageFont.truetype('arial.ttf', 15)
     #fnt1 = ImageFont.truetype('arial.ttf', 18)
-    print('here')
+    #print('here')
     #Ladakh
     d.text((300,72), str(dictAffectedData['Ladakh']),font=fnt, fill=(0, 26, 102))
     d.text((305,92), str(dictCuredData['Ladakh']),font=fnt, fill=(0, 26, 102)) 
@@ -139,5 +139,5 @@ def getImage(dictAffectedData,dictCuredData,total,cTotal,dcount,allTotal):
     #print(settings.PROJECT_ROOT + '/coronaIndia/static/images/india4.png')
     #img.save(settings.PROJECT_ROOT + '\\coronaIndia\\static\\images\\india4.png')
     img.save(settings.PROJECT_ROOT + '/coronaIndia/static/images/india4.png')
-    print(settings.PROJECT_ROOT + '/coronaIndia/static/images/india4.png')
+    #print(settings.PROJECT_ROOT + '/coronaIndia/static/images/india4.png')
     #img.save('coronaIndia\static\images\india.jp2', 'JPEG2000', quality_mode='dB', quality_layers=[41])

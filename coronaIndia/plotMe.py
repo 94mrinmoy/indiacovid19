@@ -1,7 +1,9 @@
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 import Corona.settings as settings
 import numpy as np
+matplotlib.use('Agg')
 #series = pd.read_excel('Book1.xlsx')
 #series = pd.read_csv('Book1.csv',delimiter=',')
 #print(series)
@@ -54,3 +56,24 @@ def plotMeDiffSpain():
         color = color_list[i % len(color_list)])
 
     plt.show()
+
+def plotMeLatest() :
+    y = [0,1,1,1,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,5,28,30,31,34,39,43,56,62,73,82,102,113,119,142,156,
+    194,244,330,396,499,536,606,694,724]
+    x = range(len(y))
+    
+    # x=['29/01/2020','30/01/2020','31/01/2020','01/02/2020','02/02/2020','03/02/2020','04/02/2020','05/02/2020','06/02/2020',
+    # '07/02/2020','08/02/2020','09/02/2020','10/02/2020','11/02/2020','12/02/2020','13/02/2020','14/02/2020','15/02/2020',
+    # '16/02/2020','17/02/2020','18/02/2020','01/02/2020','01/02/2020','01/02/2020','01/02/2020','01/02/2020']
+    plt.scatter(x, y,color='red')
+    plt.title('India Corona Virus Affected count per day')
+    plt.xlabel('Day number starting from 29/01/2020 till yesterday')
+    plt.ylabel('Corona Affected Count')
+    #fig = plt.figure()
+    #ax = fig.add_axes([0,0,1,1])
+    plt.savefig(settings.PROJECT_ROOT + '/coronaIndia/static/images/graph.png')
+    #plt.savefig(settings.PROJECT_ROOT + '\\coronaIndia\\static\\images\\graph.png')
+    #plt.close()
+    #plt.show()    
+
+#plotMeLatest()    
