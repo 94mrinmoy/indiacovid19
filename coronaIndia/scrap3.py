@@ -24,7 +24,7 @@ def coronaData () :
     for i,e in enumerate(soup.find_all('tr')):#, class_= "table-responsive")):
         #print(e.get_text())
         try:
-            if e.get_text().split('\n')[2] == 'Andaman and Nicobar Islands' :
+            if e.get_text().split('\n')[2] == 'Andhra Pradesh' :
                 startPoint = i
                 break
         except:
@@ -40,7 +40,8 @@ def coronaData () :
             print(e.get_text())
             states.append(e.get_text().split('\n')[2])
             if e.get_text().split('\n')[3] != '':
-                cc = int(e.get_text().split('\n')[3]) + int(e.get_text().split('\n')[4])
+                # cc = int(e.get_text().split('\n')[3]) + int(e.get_text().split('\n')[4])
+                cc = int(e.get_text().split('\n')[3]) 
             else:
                 #print(e.get_text())
                 #print(i)
@@ -141,3 +142,44 @@ def main():
 
     df.to_csv('Corona_' + str(today) + '.csv', index=False, encoding='utf-8')
     return df,total,cTotal,icount,dcount,allTotal
+
+
+def getPlotlyData(htmlPath):
+    datas = []
+    #url= getPlotlyData#"plotly.html"
+    #page= #requests.get(url)
+    #print(page.status_code)
+    soup= BeautifulSoup(open(htmlPath),'html.parser')
+    #a= list(soup.children)
+    for e in soup.find_all('body'):#, class_= "table"):
+        print('here')
+        datas.append(e)
+    return datas[0]#,population
+
+def getPlotlyDataNew(htmlPath):
+    htmlFile = open(htmlPath)
+    data = htmlFile.readlines()
+    htmlFile.close()
+    htmlFile = open(htmlPath,'w')
+    s=''
+    for d in data[3:-2]:
+        s=s+d
+    htmlFile.write(s)
+    htmlFile.close()
+
+    htmlPath = ""
+    data = htmlFile.readlines()
+    htmlFile.close()
+    htmlFile = open(htmlPath,'w')
+    sn=''
+    for d in data:
+        if d =='<!-- add plotly -->':
+            sn=sn+s
+        sn=sn+d
+    htmlFile.write(sn)
+    htmlFile.close()
+
+    print()
+
+
+

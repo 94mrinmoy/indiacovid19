@@ -21,12 +21,17 @@ def index(request):
     for i in range(len(dfStates)):
         data.append([dfStates[i],dfAffected[i],dfCured[i],dfPop[i]])
     #print (df)
+    htmlPath = pm.plotMeInt()
+    plotlyDiv = s3.getPlotlyData(htmlPath)
+    # s3.getPlotlyDataNew(htmlPath)
     context = {
         'df':data,
         'total':total,
         'cTotal':cTotal,
-        'dict':{'1':'Ladakh'}
+        'dict':{'1':'Ladakh'},
+        'plotlyDiv' : plotlyDiv
     }
+    #print(plotlyDiv)
     return render(request, 'index.html', context)
     #return render (dfhtml.data)
 
