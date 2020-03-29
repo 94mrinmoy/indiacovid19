@@ -1,17 +1,16 @@
 States,Corona Affected Count,Cured Count,Total Population,Death Count
-Andaman and Nicobar Islands,2,0,380581,0
-Andhra Pradesh,14,1,49577103,0
+Andaman and Nicobar Islands,6,0,380581,0
 Bihar,9,0,104099452,1
-Chandigarh,7,0,1055450,0
+Chandigarh,8,0,1055450,0
 Chhattisgarh,6,0,25545198,0
 Delhi,39,6,16787941,1
 Goa,3,0,1458545,0
 Gujarat,45,0,60439692,3
-Haryana,33,11,25351462,0
+Haryana,33,12,25351462,0
 Himachal Pradesh,3,0,6864602,1
-Jammu and Kashmir,18,1,12267032,1
+Jammu and Kashmir,20,1,12267032,1
 Karnataka,55,3,61095297,2
-Kerala,173,11,33406061,0
+Kerala,176,11,33406061,0
 Ladakh,13,3,274000,0
 Madhya Pradesh,30,0,72626809,2
 Maharashtra,180,25,112374333,5
@@ -20,18 +19,19 @@ Mizoram,1,0,1097206,0
 Odisha,3,0,41974218,0
 Puducherry,1,0,1247953,0
 Punjab,38,1,27743338,1
-Rajasthan,48,3,68548437,0
-Tamil Nadu,38,2,72147030,1
-Telengana,48,1,35003674,0
+Rajasthan,54,3,68548437,0
+Tamil Nadu,40,2,72147030,1
+Telengana,56,1,35003674,0
 Uttarakhand,5,0,10086292,0
-Uttar Pradesh,45,11,199812341,0
+Uttar Pradesh,55,11,199812341,0
 West Bengal,15,0,91276115,1
-Lakshadweep,0,0,64473,0
-Jharkhand,0,0,32988134,0
-Nagaland,0,0,1978502,0
+Meghalaya,0,0,2966889,0
+Andhra Pradesh,0,0,49577103,0
+Arunachal Pradesh,0,0,1383727,0
 Tripura,0,0,3673917,0
 Assam,0,0,31205576,0
-Arunachal Pradesh,0,0,1383727,0
+Nagaland,0,0,1978502,0
 Sikkim,0,0,610577,0
+Lakshadweep,0,0,64473,0
 Dadra and Nagar Haveli and Daman and Diu,0,0,585764,0
-Meghalaya,0,0,2966889,0
+Jharkhand,0,0,32988134,0

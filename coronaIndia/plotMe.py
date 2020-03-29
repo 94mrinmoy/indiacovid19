@@ -3,6 +3,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import Corona.settings as settings
 import numpy as np
+#import plotly.graph_objects as go
 matplotlib.use('Agg')
 #series = pd.read_excel('Book1.xlsx')
 #series = pd.read_csv('Book1.csv',delimiter=',')
@@ -58,8 +59,8 @@ def plotMeDiffSpain():
     plt.show()
 
 def plotMeLatest() :
-    y = [0,1,1,1,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,5,28,30,31,34,39,43,56,62,73,82,102,113,119,142,156,
-    194,244,330,396,499,536,606,694,724]
+    y = [0,1,1,1,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,5,28,30,31,34,39,43,56,62,73,
+    82,102,113,119,142,156,194,244,330,396,499,536,606,694,724,917,978]
     x = range(len(y))
     
     # x=['29/01/2020','30/01/2020','31/01/2020','01/02/2020','02/02/2020','03/02/2020','04/02/2020','05/02/2020','06/02/2020',
@@ -67,7 +68,7 @@ def plotMeLatest() :
     # '16/02/2020','17/02/2020','18/02/2020','01/02/2020','01/02/2020','01/02/2020','01/02/2020','01/02/2020']
     plt.scatter(x, y,color='red')
     plt.title('India Corona Virus Affected count per day')
-    plt.xlabel('Day number starting from 29/01/2020 till yesterday')
+    plt.xlabel('Day number starting from 29/01/2020 till today')
     plt.ylabel('Corona Affected Count')
     #fig = plt.figure()
     #ax = fig.add_axes([0,0,1,1])
@@ -77,3 +78,12 @@ def plotMeLatest() :
     #plt.show()    
 
 #plotMeLatest()    
+
+# def plotMeInt():
+#     y = [0,1,1,1,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,5,28,30,31,34,39,43,56,62,73,
+#     82,102,113,119,142,156,194,244,330,396,499,536,606,694,724]
+#     x = list(range(len(y)))
+#     fig = go.Figure(data=go.Scatter(x=x, y=y))
+#     fig.show()
+
+#plotMeInt()    

@@ -36,7 +36,7 @@ def coronaData () :
         #states.append(e.get_text().split('\n')[2])
         #print(e.get_text().split('\n')[4] + ':')
         #print(e.get_text().split('\n')[5])
-        if i>=startPoint and i<len(soup.find_all('tr'))-2:
+        if i>=startPoint and i<len(soup.find_all('tr'))-1:
             print(e.get_text())
             states.append(e.get_text().split('\n')[2])
             if e.get_text().split('\n')[3] != '':
@@ -104,9 +104,9 @@ states,currentCount,curedCount,icount,dcount,deathCount,allTotal,startPoint = co
 #print(currentCount[1:-1])
 
 #states = states[1:-1]
-currentCount = currentCount[startPoint:-2]
-curedCount = curedCount[startPoint:-2]
-deathCount = deathCount[startPoint:-2]
+currentCount = currentCount[startPoint:-1]
+curedCount = curedCount[startPoint:-1]
+deathCount = deathCount[startPoint:-1]
 #print(len(states))
 #print(len(currentCount))
 
