@@ -2,6 +2,7 @@ from django.shortcuts import render
 import coronaIndia.scrap3 as s3
 import coronaIndia.getImage as gi
 import coronaIndia.plotMe as pm
+import Corona.settings as settings
 # Create your views here.
 from django.http import HttpResponse
 import pandas as pd
@@ -22,14 +23,14 @@ def index(request):
         data.append([dfStates[i],dfAffected[i],dfCured[i],dfPop[i]])
     #print (df)
     htmlPath = pm.plotMeInt()
-    plotlyDiv = s3.getPlotlyData(htmlPath)
-    # s3.getPlotlyDataNew(htmlPath)
+    #plotlyDiv = s3.getPlotlyData(htmlPath)
+    s3.getPlotlyDataNew(htmlPath,settings.PROJECT_ROOT + '/coronaIndia/templates/indexdup2.html',settings.PROJECT_ROOT + '/coronaIndia/templates/index.html')
     context = {
         'df':data,
         'total':total,
         'cTotal':cTotal,
-        'dict':{'1':'Ladakh'},
-        'plotlyDiv' : plotlyDiv
+        'dict':{'1':'Ladakh'}
+        # 'plotlyDiv' : plotlyDiv
     }
     #print(plotlyDiv)
     return render(request, 'index.html', context)
@@ -58,6 +59,9 @@ def index2(request):
     for i in range(len(dfStates)):
         data.append([dfStates[i],dfAffected[i],dfCured[i],dfPop[i],dfDeath[i]])
     #print (df)
+    pm.plotMeLatest()
+    # htmlPath = pm.plotMeInt()
+    # s3.getPlotlyDataNew(htmlPath,settings.PROJECT_ROOT + '/coronaIndia/templates/indexdup.html',settings.PROJECT_ROOT + '/coronaIndia/templates/indexMain.html')
     context = {
         'df':data,
         'total':allTotal+cTotal,
@@ -77,5 +81,6 @@ def index2(request):
         prvCountFile = open('aTotal.txt','w+')
         prvCountFile.write(str(total))
         prvCountFile.close()
-    return render(request, 'indexMain.html', context)
+    # return render(request, 'example.html', context)
+    return render(request, 'indexdup.html', context)
     #return render (dfhtml.data)
