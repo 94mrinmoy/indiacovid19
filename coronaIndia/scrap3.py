@@ -21,11 +21,14 @@ def coronaData () :
     soup= BeautifulSoup(page.content,'html.parser')
     a= list(soup.children)
     startPoint = 0
+    endPoint = 0
     for i,e in enumerate(soup.find_all('tr')):#, class_= "table-responsive")):
         #print(e.get_text())
         try:
             if e.get_text().split('\n')[2] == 'Andhra Pradesh' :
                 startPoint = i
+            elif e.get_text().split('\n')[2] == 'West Bengal' :
+                endPoint = i    
                 break
         except:
             pass     
@@ -36,7 +39,7 @@ def coronaData () :
         #states.append(e.get_text().split('\n')[2])
         #print(e.get_text().split('\n')[4] + ':')
         #print(e.get_text().split('\n')[5])
-        if i>=startPoint and i<len(soup.find_all('tr'))-2:
+        if i>=startPoint and i<=endPoint:#len(soup.find_all('tr'))-2:
             print(e.get_text())
             states.append(e.get_text().split('\n')[2])
             if e.get_text().split('\n')[3] != '':
@@ -44,13 +47,14 @@ def coronaData () :
                 cc = int(e.get_text().split('\n')[3]) 
             else:
                 #print(e.get_text())
-                #print(i)
-                cc = int(e.get_text().split('\n')[4]) + int(e.get_text().split('\n')[5])
-            if e.get_text().split('\n')[5] !='':    
-                cuc = int(e.get_text().split('\n')[5])
+                print('error1')
+                #cc = int(e.get_text().split('\n')[4]) + int(e.get_text().split('\n')[5])
+            if e.get_text().split('\n')[4] !='':    
+                cuc = int(e.get_text().split('\n')[4])
             else:
-                cuc = int(e.get_text().split('\n')[6])
-            dc=int(e.get_text().split('\n')[6].replace('#',''))
+                #cuc = int(e.get_text().split('\n')[6])
+                print('error2')
+            dc=int(e.get_text().split('\n')[5].replace('#',''))
         else:
             cc=0   
             cuc=0 
@@ -58,8 +62,10 @@ def coronaData () :
         currentCount.append(cc)#e.get_text().split('\n')[3])
         curedCount.append(cuc)
         deathCount.append(dc)
-    icount = soup.find_all('span', class_= "icount")[1].get_text()        
-    dcount = soup.find_all('span', class_= "icount")[3].get_text().replace('#','')
+    #icount = soup.find_all('span', class_= "icount")[1].get_text()        
+    #dcount = soup.find_all('span', class_= "icount")[3].get_text().replace('#','')
+    icount = soup.find_all('strong')[5].get_text()        
+    dcount = soup.find_all('strong')[7].get_text().replace('#','')
     allTotal = int(icount) + int(dcount)  
     print(allTotal,icount)
     return states,currentCount,curedCount,icount,dcount,deathCount,allTotal,startPoint
