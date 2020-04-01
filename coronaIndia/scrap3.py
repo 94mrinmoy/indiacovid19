@@ -68,7 +68,7 @@ def coronaData () :
     dcount = soup.find_all('strong')[7].get_text().replace('#','')
     allTotal = int(icount) + int(dcount)  
     print(allTotal,icount)
-    return states,currentCount,curedCount,icount,dcount,deathCount,allTotal,startPoint
+    return states,currentCount,curedCount,icount,dcount,deathCount,allTotal,startPoint,endPoint
 
 
 def getPopulation():
@@ -106,14 +106,14 @@ population = ['199,812,341', '112,374,333', '104,099,452', '91,276,115', '72,626
 '1,097,206', '610,577', '16,787,941', '12,267,032', '1,247,953', '1,055,450', '585,764', '380,581', '274,000', '64,473']
 
 #print(len(coronaData()))
-states,currentCount,curedCount,icount,dcount,deathCount,allTotal,startPoint = coronaData()
+states,currentCount,curedCount,icount,dcount,deathCount,allTotal,startPoint,endPoint = coronaData()
 #print(len(states))
 #print(currentCount[1:-1])
 
 #states = states[1:-1]
-currentCount = currentCount[startPoint:-2]
-curedCount = curedCount[startPoint:-2]
-deathCount = deathCount[startPoint:-2]
+currentCount = currentCount[startPoint:endPoint+1]
+curedCount = curedCount[startPoint:endPoint+1]
+deathCount = deathCount[startPoint:endPoint+1]
 #print(len(states))
 #print(len(currentCount))
 
