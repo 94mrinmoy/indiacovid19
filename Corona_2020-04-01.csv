@@ -1,37 +1,37 @@
 States,Corona Affected Count,Cured Count,Total Population,Death Count
-Andhra Pradesh,83,1,49577103,0
-Andaman and Nicobar Islands,10,0,380581,0
+Andhra Pradesh,83,0,49577103,0
+Andaman and Nicobar Islands,10,1,380581,0
+Assam,1,0,31205576,0
 Bihar,23,0,104099452,1
-Chandigarh,13,0,1055450,0
-Chhattisgarh,9,0,25545198,0
-Delhi,120,6,16787941,2
+Chandigarh,16,0,1055450,0
+Chhattisgarh,9,2,25545198,0
+Delhi,152,6,16787941,2
 Goa,5,0,1458545,0
-Gujarat,74,5,60439692,6
+Gujarat,82,5,60439692,6
 Haryana,43,21,25351462,0
 Himachal Pradesh,3,0,6864602,1
-Jammu and Kashmir,55,2,12267032,2
+Jammu and Kashmir,62,2,12267032,2
+Jharkhand,1,0,32988134,0
 Karnataka,101,8,61095297,3
 Kerala,241,23,33406061,2
 Ladakh,13,3,274000,0
-Madhya Pradesh,47,0,72626809,3
+Madhya Pradesh,66,0,72626809,3
 Maharashtra,302,39,112374333,9
 Manipur,1,0,2570390,0
 Mizoram,1,0,1097206,0
 Odisha,4,0,41974218,0
-Puducherry,1,0,1247953,0
-Punjab,41,1,27743338,3
+Puducherry,3,1,1247953,0
+Punjab,42,1,27743338,3
 Rajasthan,93,3,68548437,0
-Tamil Nadu,124,4,72147030,1
-Telengana,94,1,35003674,3
+Tamil Nadu,234,6,72147030,1
+Telengana,96,1,35003674,3
 Uttarakhand,7,2,10086292,0
-Uttar Pradesh,103,14,199812341,0
-West Bengal,26,0,91276115,2
-Jharkhand,0,0,32988134,0
-Dadra and Nagar Haveli and Daman and Diu,0,0,585764,0
-Assam,0,0,31205576,0
-Arunachal Pradesh,0,0,1383727,0
+Uttar Pradesh,103,14,199812341,2
+West Bengal,37,6,91276115,3
+Sikkim,0,0,610577,0
+Lakshadweep,0,0,64473,0
 Meghalaya,0,0,2966889,0
 Nagaland,0,0,1978502,0
+Dadra and Nagar Haveli and Daman and Diu,0,0,585764,0
+Arunachal Pradesh,0,0,1383727,0
 Tripura,0,0,3673917,0
-Lakshadweep,0,0,64473,0
-Sikkim,0,0,610577,0
