@@ -4,7 +4,7 @@
     "start_url" : "/",
     "display" : "standalone",
     "background_color" : "rgb(187, 213, 216)",
-    "theme_color": "#F8F8F8", 
+    "theme_color": "#181818", 
     "description" : "This is to track corona affected count in India.",
     "icons":[
             {
