@@ -101,6 +101,20 @@ def plotMeInt():
         size=18,
         color="#7f7f7f"
     ))
+
+    fig.update_layout(
+    autosize=False,
+    width=400,
+    height=600,
+    margin=dict(
+        l=30,
+        r=30,
+        b=100,
+        t=100,
+        pad=4
+    ),
+    paper_bgcolor="LightSteelBlue",
+)
     #fig.show()
     fig.write_html(settings.PROJECT_ROOT + '/coronaIndia/static/plotly.html') 
     return settings.PROJECT_ROOT + '/coronaIndia/static/plotly.html'

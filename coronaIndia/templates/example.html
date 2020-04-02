@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      function aboutDisplay(){
+        document.getElementById('Home').style.display = "none";
+        document.getElementById('About').style.display = "inline";
+        document.getElementById('navbar-toggler').click();
+      }
+
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,17 +16,30 @@
     {% load myFilters %}
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel='manifest' href="{% static "manifest.webmanifest" %}">
+<style>
+
+.container {
+  opacity: 1;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+</style>
   </head>
   <body style="background-color:rgb(187, 213, 216);">
 
-    <div class = "container" style="position: relative; left: 0; top: 0;">
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    
+<nav class="navbar navbar-expand-md navbar-dark bg-dark ">
    <div class='container'>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="">
         <img src="http://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
         India Corona Status
       </a>
-      <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarCollapseLinks' aria-expanded='false' aria-label='Toggle Navigation'>
+      <button id="navbar-toggler" class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarCollapseLinks' aria-expanded='false' aria-label='Toggle Navigation'>
         <span class='navbar-toggler-icon'></span>
       </button>
 
@@ -31,79 +52,59 @@
             <a href='' class='nav-link'>Home</a>
           </li>
           <li class='nav-item'>
-            <a href='{% static "about.html" %}' class='nav-link'>About</a>
+            <a href='#About' onclick="aboutDisplay();" class='nav-link'>About</a>
           </li>
         </ul>
       </div>
   </div>
 </nav>
-
-<div>
-    <center>
-        <h4>We are going through a hard time, let's all together pray for humanity by staying at our home. </h4>
-        <h3>#StayHomeStaySafe</h3>
-    </center>
-    </div> 
-
-    
-        <div>
-        <center><img src="{% static "images//india4.png" %}" alt="" class='image' width="100%" ></center>
-        <!-- <figure class="zoo-item" data-zoo-image="{% static "images//india3.png" %}"></figure> -->
-        <!-- <div class = "container2" style="position: absolute; left: 0; top: 0;">
-        <img src="{% static "images//ladakh2.png" %}" class='ladakh' >
-        </div>
-        <div class = "container3" style="position: absolute; left: 0; top: 0;">
-            <img src="{% static "images//jk.png" %}" class='jk' >
-        </div> -->
-        
-        <!-- 
-        
-            <h4>{{df.0.1}}</h4>
-         -->
-        
-        <!-- <div class=ladakhCount >
-            <h4>{{dictAffectedData.Ladakh}}</h4>    
-            <h4>{{dictCuredData.Ladakh}}</h4>   
-        </div>
-        <div class=jkCount >
-            <h4>{{dictAffectedData|getkey:'Jammu and Kashmir'}}</h4>    
-            <h4>{{dictCuredData|getkey:'Jammu and Kashmir'}}</h4>   
-        </div> -->
-    </div>
-    <div>
-        
-        <center>
-            <table border="1" bordercolor="#75a3a3" style="width:100%">
-                <tr>
-                <th>States</th>
-                <th>Corona Affected Count</th>
-                <th>Cured Count</th>
-                <th>Total Population</th>
-                <th>Death Count</th>
+<div class = "container" style="position: relative; left: 0; top: 0;">
+  <div id="Home">
+  <center>
+      <h4>We are going through a hard time, let's all together pray for humanity by staying at our home. </h4>
+      <h3>#StayHomeStaySafe</h3>
+  </center>
+  
+  <center><img src="{% static "images//india4.png" %}" alt="" class='image' width="100%" ></center>
+  
+  <center>
+      <table border="1" bordercolor="#75a3a3">
+          <tr>
+          <th><center><font size="2">States</font></center></th>
+          <th><center><font size="2">Corona Affected Count</font></center></th>
+          <th><center><font size="2">Cured Count</font></center></th>
+          <th><center><font size="2">Total Population ~ </font></center></th>
+          <th><center><font size="2">Death Count</font></center></th>
+      </tr>
+      <tr>
+          <th><center><font size="2">Total</font></center></th>
+          <th><center><font size="2">{{total}}</font></center></th>
+          <th><center><font size="2">{{cTotal}}</font></center></th>
+          <th><center><font size="2">1341125573</font></center></th>
+          <th><center><font size="2">{{dcount}}</font></center></th>
+      </tr>
+          {% for rowval in df %}    
+             <tr>
+             {% for val in rowval %}
+              <td><center><font size="1">{{val}}</font></center></td>
+             {% endfor %}
             </tr>
-            <tr>
-                <th>Total</th>
-                <th>{{total}}</th>
-                <th>{{cTotal}}</th>
-                <th>1341125626</th>
-                <th>{{dcount}}</th>
-            </tr>
-                {% for rowval in df %}    
-                   <tr>
-                   {% for val in rowval %}
-                    <td><center>{{val}}</center></td>
-                   {% endfor %}
-                  </tr>
-                {% endfor %}
-              </table>
-        </center>
-    </div>
-<div>
-         
-        <center><img src="{% static "images//graph.png" %}" alt="" class='image' width="100%" ></center>
-    </div>   </div>
-
-
+          {% endfor %}
+        </table>
+  </center>
+  
+      <center><img src="{% static "images//graph.png" %}" alt="" class='image' width="100%" ></center>
+    <!-- add plotly -->  
+  </div>  
+  </div>
+  <div id="About" class="tabcontent" style="display: none;">
+      <h3>About</h3>
+      <p>Hi All, <br>
+          This is a Quarantine time project of mine to track the number of people suffering from the Corona Virus here in India. <br>
+          The data presented here are referenced from Indian Government website (<a href="https://www.mohfw.gov.in/">https://www.mohfw.gov.in/</a>) . 
+          
+      </p>
+    </div>  
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
