@@ -22,9 +22,9 @@ def index(request):
     for i in range(len(dfStates)):
         data.append([dfStates[i],dfAffected[i],dfCured[i],dfPop[i]])
     #print (df)
-    #htmlPath = pm.plotMeInt()
+    htmlPath = pm.plotMeInt()
     #plotlyDiv = s3.getPlotlyData(htmlPath)
-    #s3.getPlotlyDataNew(htmlPath,settings.PROJECT_ROOT + '/coronaIndia/templates/indexdup2.html',settings.PROJECT_ROOT + '/coronaIndia/templates/index.html')
+    s3.getPlotlyDataNew(htmlPath,settings.PROJECT_ROOT + '/coronaIndia/templates/example.html',settings.PROJECT_ROOT + '/coronaIndia/templates/indexMain.html')
     context = {
         'df':data,
         'total':total,
@@ -33,8 +33,8 @@ def index(request):
         # 'plotlyDiv' : plotlyDiv
     }
     #print(plotlyDiv)
-    #return render(request, 'index.html', context)
-    return render(request, 'example.html', context)
+    return render(request, 'index.html', context)
+    #return render(request, 'example.html', context)
     #return render (dfhtml.data)
 
 def index2(request):
@@ -82,6 +82,6 @@ def index2(request):
         prvCountFile = open('aTotal.txt','w+')
         prvCountFile.write(str(total))
         prvCountFile.close()
-    return render(request, 'indexMain.html', context)
+    return render(request, 'example.html', context)
     # return render(request, 'indexdup.html', context)
     #return render (dfhtml.data)

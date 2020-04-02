@@ -91,29 +91,29 @@ def plotMeInt():
     '01-03-20','02-03-20','03-03-20','04-03-20','05-03-20','06-03-20','07-03-20','08-03-20','09-03-20','10-03-20','11-03-20',
     '12-03-20','13-03-20','14-03-20','15-03-20','16-03-20','17-03-20','18-03-20','19-03-20','20-03-20','21-03-20','22-03-20',
     '23-03-20','24-03-20','25-03-20','26-03-20','27-03-20','28-03-20','29-03-20','30-03-20','31-03-20','01-04-20','02-04-20']
-    fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines+markers', text=dates))
+    fig = go.Figure(data=go.Scatter(x=x, y=y, mode='markers', text=dates))
     fig.update_layout(
     title="India Corona Virus Affected count per day",
     xaxis_title="Number of days starting from 29/01/2020 till today",
     yaxis_title="Corona Affected Count",
     font=dict(
         family="Courier New, monospace",
-        size=18,
+        size=8,
         color="#7f7f7f"
     ))
 
     fig.update_layout(
     autosize=False,
-    width=400,
-    height=600,
+    width=340,
+    height=300,
     margin=dict(
-        l=30,
-        r=30,
-        b=100,
-        t=100,
-        pad=4
-    ),
-    paper_bgcolor="LightSteelBlue",
+        l=25,
+        r=25,
+        b=50,
+        t=50,
+        pad=2
+    )#,
+    #paper_bgcolor="LightSteelBlue",
 )
     #fig.show()
     fig.write_html(settings.PROJECT_ROOT + '/coronaIndia/static/plotly.html') 
