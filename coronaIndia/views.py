@@ -82,6 +82,6 @@ def index2(request):
         prvCountFile = open('aTotal.txt','w+')
         prvCountFile.write(str(total))
         prvCountFile.close()
-    return render(request, 'example.html', context)
+    return render(request, 'indexMain.html', context)
     # return render(request, 'indexdup.html', context)
     #return render (dfhtml.data)
