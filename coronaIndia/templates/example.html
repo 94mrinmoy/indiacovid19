@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <title>India Corona Status</title>
   <head>
     <script>
       function aboutDisplay(){
@@ -10,8 +11,11 @@
 
     </script>
     <!-- Required meta tags -->
+    <meta name="Description" content="Author: Mrinmoy Das,
+    This application is to track number of people affected due to Corona virus in India.">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
     {% load myFilters %}
     <!-- Bootstrap CSS -->
@@ -86,7 +90,7 @@
           {% for rowval in df %}    
              <tr>
              {% for val in rowval %}
-              <td><center><font size="1">{{val}}</font></center></td>
+              <td><center><font size="2">{{val}}</font></center></td>
              {% endfor %}
             </tr>
           {% endfor %}
