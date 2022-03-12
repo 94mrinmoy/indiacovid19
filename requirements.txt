@@ -23,7 +23,7 @@ numpy==1.18.2
 pandas==1.0.3
 parso==0.6.2
 pickleshare==0.7.5
-Pillow==7.0.0
+Pillow==9.0.1
 plotly==4.5.4
 prompt-toolkit==3.0.4
 Pygments==2.6.1
